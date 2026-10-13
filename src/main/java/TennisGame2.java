@@ -9,6 +9,8 @@ public class TennisGame2 implements TennisGame
     private String player1Name;
     private String player2Name;
 
+    private static final String FIFTEEN_STR = "Fifteen";
+
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
@@ -21,7 +23,7 @@ public class TennisGame2 implements TennisGame
             if (P1point==0)
                 score = "Love";
             if (P1point==1)
-                score = "Fifteen";
+                score = FIFTEEN_STR;
             if (P1point==2)
                 score = "Thirty";
             score += "-All";
@@ -32,7 +34,7 @@ public class TennisGame2 implements TennisGame
         if (P1point > 0 && P2point==0)
         {
             if (P1point==1)
-                P1res = "Fifteen";
+                P1res = FIFTEEN_STR;
             if (P1point==2)
                 P1res = "Thirty";
             if (P1point==3)
@@ -44,7 +46,7 @@ public class TennisGame2 implements TennisGame
         if (P2point > 0 && P1point==0)
         {
             if (P2point==1)
-                P2res = "Fifteen";
+                P2res = FIFTEEN_STR;
             if (P2point==2)
                 P2res = "Thirty";
             if (P2point==3)
@@ -61,7 +63,7 @@ public class TennisGame2 implements TennisGame
             if (P1point==3)
                 P1res="Forty";
             if (P2point==1)
-                P2res="Fifteen";
+                P2res=FIFTEEN_STR;
             if (P2point==2)
                 P2res="Thirty";
             score = P1res + "-" + P2res;
@@ -73,7 +75,7 @@ public class TennisGame2 implements TennisGame
             if (P2point==3)
                 P2res="Forty";
             if (P1point==1)
-                P1res="Fifteen";
+                P1res=FIFTEEN_STR;
             if (P1point==2)
                 P1res="Thirty";
             score = P1res + "-" + P2res;
@@ -127,7 +129,7 @@ public class TennisGame2 implements TennisGame
     }
 
     public void wonPoint(String player) {
-        if (player == "player1")
+        if (player.equals("player1"))
             P1Score();
         else
             P2Score();
